@@ -5,7 +5,7 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """ BasicCache class that inherits from BaseCaching and is a caching system
+    """ BasicCache class that inherits from BaseCaching and is a cstem
     """
 
     def put(self, key, item):
@@ -17,6 +17,6 @@ class BasicCache(BaseCaching):
 
     def get(self, key):
         """ Get an item by key.
-        If key is None or if the key doesn’t exist in self.cache_data, return None.
+        If key is None or if the key doesn’t exist in self.cache_data, retu.
         """
         return self.cache_data.get(key, None)
