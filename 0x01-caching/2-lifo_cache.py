@@ -32,12 +32,13 @@ class LIFOCache(BaseCaching):
         if key is None or item is None:
             return
 
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            if self.last_key is not None:
+                del self.cache_data[self.last_key]
+                print(f"DISCARD: {self.last_key}")
+
         self.cache_data[key] = item
         self.last_key = key
-
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            del self.cache_data[self.last_key]
-            print(f"DISCARD: {self.last_key}")
 
     def get(self, key):
         """
@@ -49,4 +50,4 @@ class LIFOCache(BaseCaching):
         Returns:
             The value associated with the key, or None if the key is not found.
         """
-        return self.cache_data.get(key, None)
+        return self.cache_data.get(key)
