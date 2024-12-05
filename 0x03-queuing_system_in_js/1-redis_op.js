@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import redis from 'redis';
 
 // Create Redis client
@@ -14,7 +16,7 @@ client.on('error', (err) => {
 
 // Function to set a new school in Redis
 function setNewSchool(schoolName, value) {
-  client.set(schoolName, value, redis.print);  // Store the value for the schoolName and print confirmation
+  client.set(schoolName, value, redis.print); // Store the value for the schoolName and print confirmation
 }
 
 // Function to display the value of a school in Redis
@@ -23,12 +25,13 @@ function displaySchoolValue(schoolName) {
     if (err) {
       console.error(`Error fetching data for ${schoolName}: ${err}`);
     } else {
-      console.log(reply);  // Log the value from Redis
+      console.log(reply); // Log the value from Redis
     }
   });
 }
 
 // Call functions as specified
-displaySchoolValue('Holberton');
-setNewSchool('HolbertonSanFrancisco', '100');
-displaySchoolValue('HolbertonSanFrancisco');
+displaySchoolValue('Holberton'); // Display value for 'Holberton' (may not exist yet)
+setNewSchool('HolbertonSanFrancisco', '100'); // Set new school and value
+displaySchoolValue('HolbertonSanFrancisco'); // Display value for 'HolbertonSanFrancisco'
+

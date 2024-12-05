@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import kue from 'kue';
 
 // Create a queue named push_notification_code_2

@@ -1,3 +1,6 @@
+
+#!/usr/bin/env node
+
 import { createClient, print } from 'redis';
 
 // Create a Redis client

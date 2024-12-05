@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import kue from 'kue';
 
 // Function to create push notification jobs

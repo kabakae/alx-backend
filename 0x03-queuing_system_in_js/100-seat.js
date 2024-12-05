@@ -1,4 +1,5 @@
-// Import necessary libraries
+#!/usr/bin/env node
+
 const redis = require('redis');
 const { promisify } = require('util');
 const kue = require('kue');
